@@ -3,23 +3,23 @@ package com.example.demo;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 
 @Getter // Class 단위
+@Setter
 @ToString(onlyExplicitlyIncluded = true, includeFieldNames = false) // -> super=Member(1, yohan)
-@RequiredArgsConstructor(access = AccessLevel.PUBLIC) // final 필드 또는 @NonNull이 붙은 필드만 초기화하는 생성자를 생성
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class Member {
 
     @ToString.Include(name = "memberId")
-    private final Integer id;
+    private Integer id;
     @ToString.Include(rank = -1)
-    private final String name;
-    @Setter // 필드 단위
+    private String name;
     private int age;
-    @Setter(AccessLevel.PRIVATE) // 접근제어자를 Private 로 변경
     private String email;
 
 //  이렇게 안 해도 된다.
