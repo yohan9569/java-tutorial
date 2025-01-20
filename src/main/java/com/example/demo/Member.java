@@ -1,8 +1,10 @@
 package com.example.demo;
 
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 
-@AllArgsConstructor
+// Sets the access level of the constructor.
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class Member {
 
     private Integer id;
