@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import lombok.ToString;
 
 // @AllArgsConstructor // Lombok needs a default constructor in the base class
-@ToString // 상위 클래스 필드 노출 안 됨. Administrator(role=backend, allocatedAt=2025-01-20)
+@ToString(callSuper = true)
 public class Administrator extends Member {
 
     private String role;
