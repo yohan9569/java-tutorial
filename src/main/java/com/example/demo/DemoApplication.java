@@ -8,22 +8,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoApplication {
 
     public static void main(String[] args) {
-        Member yohan = new Member();
-
-        yohan.setId(1);
-        yohan.setName("yohan");
-        yohan.setAge(25);
-        yohan.setEmail("yohan9569@naver.com");
+        Member yohan = new Member(1, "yohan", 10, "yohan@example.com");
+        Member yohan2 = new Member(1, "yohan", 10, "yohan@example.com");
 
         System.out.println("---");
-        System.out.println(yohan);            // com.example.demo.Member@527740a2 객체
-        System.out.println(yohan.toString()); // com.example.demo.Member@527740a2 객체
+        System.out.println(yohan);                // Member(1, yohan)
 
-        System.out.println(yohan.getId());    // @Getter 클래스 단위로 적용하여 모든 필드 조회 가능
-        System.out.println(yohan.getName());
-        System.out.println(yohan.getAge());
-        System.out.println(yohan.getEmail());
+        System.out.println("---");
+        System.out.println(yohan2);               // Member(1, yohan)
 
+        System.out.println("---");
+        System.out.println(yohan == yohan2);      // false
+        System.out.println(yohan.equals(yohan2)); // false
     }
 
 }

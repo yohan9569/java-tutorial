@@ -12,7 +12,7 @@ import lombok.ToString;
 @Getter // Class 단위
 @Setter
 @ToString(onlyExplicitlyIncluded = true, includeFieldNames = false) // -> super=Member(1, yohan)
-@NoArgsConstructor(access = AccessLevel.PUBLIC)
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class Member {
 
     @ToString.Include(name = "memberId")
