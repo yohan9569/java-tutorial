@@ -3,15 +3,18 @@ package com.example.demo;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
 
-@Getter
+@Getter // Class 단위
 @AllArgsConstructor(access = AccessLevel.PUBLIC) // AccessLevel: Sets the access level of the constructor.
 public class Member {
 
     private Integer id;
     private String name;
+    @Setter // 필드 단위
     private int age;
+    @Setter
     private String email;
 
 //  이렇게 안 해도 된다.
