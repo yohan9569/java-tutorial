@@ -14,7 +14,7 @@ public class DemoApplication {
 
         // yohan.setId(2);                    // 해당 필드는 setter 적용이 안 됨.
         yohan.setAge(31);
-        yohan.setEmail("yohan9569@naver.com");
+        // yohan.setEmail("yohan9569@naver.com");   // Private 로 바꾸어서 외부에서 호출 불가
 
         System.out.println(yohan.getId());    // @Getter 클래스 단위로 적용하여 모든 필드 조회 가능
         System.out.println(yohan.getName());

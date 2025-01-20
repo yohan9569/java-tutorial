@@ -14,7 +14,7 @@ public class Member {
     private String name;
     @Setter // 필드 단위
     private int age;
-    @Setter
+    @Setter(AccessLevel.PRIVATE) // 접근제어자를 Private 로 변경
     private String email;
 
 //  이렇게 안 해도 된다.
