@@ -2,8 +2,10 @@ package com.example.demo.member;
 
 import com.example.demo.Member;
 import java.time.LocalDate;
+import lombok.ToString;
 
 // @AllArgsConstructor // Lombok needs a default constructor in the base class
+@ToString // 상위 클래스 필드 노출 안 됨. Administrator(role=backend, allocatedAt=2025-01-20)
 public class Administrator extends Member {
 
     private String role;
@@ -15,11 +17,11 @@ public class Administrator extends Member {
         this.allocatedAt = LocalDate.now();
     }
 
-    @Override // 생략 가능 // 재정의 안하면, 상위 클래스 버전 출력. Member(memberId=1, name=yohan)
-    public String toString() {
-        return String.format(
-            "Administrator(id=%s, name=%s, age=%s, email=%s, role=%s, allocated=%s)",
-            this.getId(), this.getName(), this.getAge(), this.getEmail(), this.role, this.allocatedAt
-        );
-    }
+//    @Override // 생략 가능 // 재정의 안하면, 상위 클래스 버전 출력. Member(memberId=1, name=yohan)
+//    public String toString() {
+//        return String.format(
+//            "Administrator(id=%s, name=%s, age=%s, email=%s, role=%s, allocated=%s)",
+//            this.getId(), this.getName(), this.getAge(), this.getEmail(), this.role, this.allocatedAt
+//        );
+//    }
 }
