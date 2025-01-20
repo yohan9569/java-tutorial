@@ -3,19 +3,20 @@ package com.example.demo;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 
 @Getter // Class 단위
 @ToString(onlyExplicitlyIncluded = true, includeFieldNames = false) // -> super=Member(1, yohan)
-@AllArgsConstructor(access = AccessLevel.PUBLIC) // AccessLevel: Sets the access level of the constructor.
+@RequiredArgsConstructor(access = AccessLevel.PUBLIC) // final 필드 또는 @NonNull이 붙은 필드만 초기화하는 생성자를 생성
 public class Member {
 
     @ToString.Include(name = "memberId")
-    private Integer id;
+    private final Integer id;
     @ToString.Include(rank = -1)
-    private String name;
+    private final String name;
     @Setter // 필드 단위
     private int age;
     @Setter(AccessLevel.PRIVATE) // 접근제어자를 Private 로 변경

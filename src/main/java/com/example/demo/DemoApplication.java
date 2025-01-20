@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoApplication {
 
     public static void main(String[] args) {
-        Administrator yohan = new Administrator(1, "yohan", 30, "yohan9569@gmail.com", "backend");
+        Administrator yohan = new Administrator(1, "yohan", "backend");
 
         System.out.println(yohan);            // com.example.demo.Member@527740a2 객체
         System.out.println(yohan.toString()); // com.example.demo.Member@527740a2 객체
