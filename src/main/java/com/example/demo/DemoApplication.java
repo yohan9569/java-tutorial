@@ -19,7 +19,7 @@ public class DemoApplication {
 
         System.out.println("---");
         System.out.println(yohan == yohan2);      // false
-        System.out.println(yohan.equals(yohan2)); // false
+        System.out.println(yohan.equals(yohan2)); // false -> true 로 바뀜.
     }
 
 }

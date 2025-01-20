@@ -22,11 +22,10 @@ public class Member {
     private int age;
     private String email;
 
-//  이렇게 안 해도 된다.
-//  public Member(Integer id, String name, int age, String email) {
-//      this.id = id;
-//      this.name = name;
-//      this.age = age;
-//      this.email = email;
-//  }
+    public boolean equals(Member member) {
+        return this.id.equals(member.id)
+            && this.name.equals(member.name)
+            && this.age == member.age
+            && this.email.equals(member.email);
+    }
 }
