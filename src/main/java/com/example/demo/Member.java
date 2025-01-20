@@ -8,7 +8,7 @@ import lombok.ToString;
 
 
 @Getter // Class 단위
-@ToString
+@ToString(exclude = {"age", "email"})
 @AllArgsConstructor(access = AccessLevel.PUBLIC) // AccessLevel: Sets the access level of the constructor.
 public class Member {
 
