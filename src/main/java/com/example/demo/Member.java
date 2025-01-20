@@ -17,6 +17,10 @@ public class Member {
     @Setter(AccessLevel.PRIVATE) // 접근제어자를 Private 로 변경
     private String email;
 
+    public String toString() {
+        return String.format("Member(id=%s, name=%s, age=%s, email=%s)", id, name, age, email);
+    }
+
 //  이렇게 안 해도 된다.
 //  public Member(Integer id, String name, int age, String email) {
 //      this.id = id;
