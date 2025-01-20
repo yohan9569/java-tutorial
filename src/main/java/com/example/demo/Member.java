@@ -8,11 +8,13 @@ import lombok.ToString;
 
 
 @Getter // Class 단위
-@ToString(of = {"id", "name"}) // 이전 스타일의 'exclude/of' 매개변수는 새 스타일의 @Include / @Exclude 주석과 함께 사용할 수 없음.
+@ToString(onlyExplicitlyIncluded = true) // true 안 해주면(default), 전부 나옴.
 @AllArgsConstructor(access = AccessLevel.PUBLIC) // AccessLevel: Sets the access level of the constructor.
 public class Member {
 
+    @ToString.Include
     private Integer id;
+    @ToString.Include
     private String name;
     @Setter // 필드 단위
     private int age;
