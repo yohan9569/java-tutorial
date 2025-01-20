@@ -8,7 +8,7 @@ import lombok.ToString;
 
 
 @Getter // Class 단위
-@ToString(onlyExplicitlyIncluded = true) // true 안 해주면(default), 전부 나옴.
+@ToString(onlyExplicitlyIncluded = true, includeFieldNames = false) // -> super=Member(1, yohan)
 @AllArgsConstructor(access = AccessLevel.PUBLIC) // AccessLevel: Sets the access level of the constructor.
 public class Member {
 
