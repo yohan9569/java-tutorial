@@ -12,9 +12,9 @@ import lombok.ToString;
 @AllArgsConstructor(access = AccessLevel.PUBLIC) // AccessLevel: Sets the access level of the constructor.
 public class Member {
 
-    @ToString.Include
+    @ToString.Include(name = "memberId")
     private Integer id;
-    @ToString.Include
+    @ToString.Include(rank = -1)
     private String name;
     @Setter // 필드 단위
     private int age;
