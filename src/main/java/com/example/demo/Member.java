@@ -2,6 +2,7 @@ package com.example.demo;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,12 +12,8 @@ import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 
 
-@Getter // Class 단위
-@Setter
-@ToString(onlyExplicitlyIncluded = true, includeFieldNames = false) // -> super=Member(1, yohan)
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@AllArgsConstructor(access = AccessLevel.PUBLIC)
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@Data // @ALL 이 아닌 @requiredargsconstructor 추가 -> final 붙어야 생성자에 주입 가능. // 아래 설정들도 유효, onlyExplicitlyIncluded 못 넣음 유의
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class Member {
 
     @ToString.Include(name = "memberId")
@@ -25,6 +22,9 @@ public class Member {
     @ToString.Include(rank = -1)
     @EqualsAndHashCode.Include
     /*private*/ String name;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     /*private*/ int age;
+    @EqualsAndHashCode.Exclude
     /*private*/ String email;
 }
