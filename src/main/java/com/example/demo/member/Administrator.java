@@ -2,10 +2,12 @@ package com.example.demo.member;
 
 import com.example.demo.Member;
 import java.time.LocalDate;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 // @AllArgsConstructor // Lombok needs a default constructor in the base class
 @ToString(callSuper = true)
+@EqualsAndHashCode
 public class Administrator extends Member {
 
     private String role;

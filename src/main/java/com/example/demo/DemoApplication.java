@@ -9,7 +9,7 @@ public class DemoApplication {
 
     public static void main(String[] args) {
         Administrator yohan = new Administrator(1, "yohan", 10, "yohan@example.com", "DEVELOPER");
-        Administrator yohan2 = new Administrator(1, "yohan", 16, "yohan@other.com", "ANALYST");
+        Administrator yohan2 = new Administrator(11, "yohan2", 16, "yohan@other.com", "DEVELOPER");
 
         System.out.println("---");
         System.out.println(yohan);                // Member(1, yohan)
@@ -19,7 +19,7 @@ public class DemoApplication {
 
         System.out.println("---");
         System.out.println(yohan == yohan2);      // false
-        System.out.println(yohan.equals(yohan2)); // true : Administrator 에서 재정의 안 돼서, Member의 equals 사용
+        System.out.println(yohan.equals(yohan2)); // true : Administrator 재정의 했지만, 자식만의 필드들만 계산됨
     }
 
 }
