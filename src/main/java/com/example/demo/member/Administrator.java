@@ -7,7 +7,7 @@ import lombok.ToString;
 
 // @AllArgsConstructor // Lombok needs a default constructor in the base class
 @ToString(callSuper = true)
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = true)
 public class Administrator extends Member {
 
     private String role;

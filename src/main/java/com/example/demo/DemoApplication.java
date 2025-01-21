@@ -9,7 +9,7 @@ public class DemoApplication {
 
     public static void main(String[] args) {
         Administrator yohan = new Administrator(1, "yohan", 10, "yohan@example.com", "DEVELOPER");
-        Administrator yohan2 = new Administrator(11, "yohan2", 16, "yohan@other.com", "DEVELOPER");
+        Administrator yohan2 = new Administrator(1, "yohan", 16, "yohan@other.com", "DEVELOPER");
 
         System.out.println("---");
         System.out.println(yohan);                // Member(1, yohan)
@@ -19,7 +19,8 @@ public class DemoApplication {
 
         System.out.println("---");
         System.out.println(yohan == yohan2);      // false
-        System.out.println(yohan.equals(yohan2)); // true : Administrator 재정의 했지만, 자식만의 필드들만 계산됨
+        System.out.println(yohan.equals(yohan2)); // true : Administrator 재정의 후, 부모 필드 포함 전체 비교
+        // - 부모 EqualsAndHashCode에서 설정한 값도 상속 (include 등)
     }
 
 }
