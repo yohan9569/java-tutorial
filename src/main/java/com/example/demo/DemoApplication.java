@@ -9,7 +9,7 @@ public class DemoApplication {
 
     public static void main(String[] args) {
         Member yohan = new Member(1, "yohan", 10, "yohan@example.com");
-        Member yohan2 = new Member(1, "yohan", 10, "yohan@example.com");
+        Member yohan2 = new Member(1, "yohan", 16, "yohan@other.com");
 
         System.out.println("---");
         System.out.println(yohan);                // Member(1, yohan)

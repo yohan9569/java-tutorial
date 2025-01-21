@@ -13,7 +13,7 @@ import lombok.ToString;
 @Getter // Class 단위
 @Setter
 @ToString(onlyExplicitlyIncluded = true, includeFieldNames = false) // -> super=Member(1, yohan)
-@EqualsAndHashCode
+@EqualsAndHashCode(exclude = {"age", "email"})
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class Member {
 
