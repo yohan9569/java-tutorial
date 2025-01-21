@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.FieldDefaults;
 
 
 @Getter // Class 단위
@@ -15,14 +16,15 @@ import lombok.ToString;
 @ToString(onlyExplicitlyIncluded = true, includeFieldNames = false) // -> super=Member(1, yohan)
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Member {
 
     @ToString.Include(name = "memberId")
     @EqualsAndHashCode.Include
-    private Integer id;
+    /*private*/ Integer id;
     @ToString.Include(rank = -1)
     @EqualsAndHashCode.Include
-    private String name;
-    private int age;
-    private String email;
+    /*private*/ String name;
+    /*private*/ int age;
+    /*private*/ String email;
 }
