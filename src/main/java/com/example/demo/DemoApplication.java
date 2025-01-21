@@ -8,18 +8,21 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoApplication {
 
     public static void main(String[] args) {
-        Member yohan = new Member(1, "yohan", 10, "yohan@example.com");
-        Member yohan2 = new Member(1, "yohan", 10, "yohan@example.com");
+        Administrator yohan = new Administrator(1, "yohan", 10, "yohan@example.com", "DEVELOPER");
+        Administrator yohan2 = new Administrator(1, "yohan", 16, "yohan@other.com", "DEVELOPER");
 
         System.out.println("---");
         System.out.println(yohan);                // Member(1, yohan)
+        System.out.println(yohan.getName());      // @Getter (@Value = 모든 "FINAL" 필드에 대해 Getter 생성)
+        //yohan.setName("Caron");                 // @Setter (@Value = Setter 미생성)
 
         System.out.println("---");
         System.out.println(yohan2);               // Member(1, yohan)
 
         System.out.println("---");
         System.out.println(yohan == yohan2);      // false
-        System.out.println(yohan.equals(yohan2)); // false -> true 로 바뀜.
+        System.out.println(yohan.equals(yohan2)); // true : Administrator 재정의 후, 부모 필드 포함 전체 비교
+        // - 부모 EqualsAndHashCode에서 설정한 값도 상속 (include 등)
     }
 
 }

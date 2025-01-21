@@ -2,14 +2,19 @@ package com.example.demo.member;
 
 import com.example.demo.Member;
 import java.time.LocalDate;
+import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.experimental.FieldDefaults;
 
 // @AllArgsConstructor // Lombok needs a default constructor in the base class
 @ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class Administrator extends Member {
 
-    private String role;
-    private LocalDate allocatedAt;
+    /*private final*/ String role;
+    /*private final*/ LocalDate allocatedAt;
 
     public Administrator(Integer id, String name, int age, String email, String role) {
         super(id, name, age, email);
