@@ -7,9 +7,10 @@ public class Member {
     protected int age;
     protected String email;
 
-    // 부분 초기화 생성자
-    public Member(String name) {
-        this.name = name;
+    // dto로 초기화 생성자
+    public Member(MemberRequestDto dto) {
+        this.name = dto.getName();
+        this.email = dto.getEmail();
     }
 
     public String getName() {
