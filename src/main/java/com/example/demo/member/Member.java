@@ -7,11 +7,15 @@ public class Member {
     protected int age;
     protected String email;
 
-    // 기본 생성자 생략
+    // 부분 초기화 생성자
+    public Member(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
