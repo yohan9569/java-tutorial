@@ -1,13 +1,17 @@
 package com.example.demo;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.example.demo.member.Member;
 
-@SpringBootApplication
 public class DemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
-    }
+        Member yohan = new Member();
 
+        yohan.setName("yohan");
+        yohan.setEmail("yohan@example.com");
+
+        System.out.println("---");
+        System.out.println(yohan);
+        System.out.println(yohan.getName());
+    }
 }
