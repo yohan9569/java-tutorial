@@ -1,32 +1,27 @@
 package com.example.demo.member;
 
-import com.example.demo.Member;
 import java.time.LocalDate;
-import lombok.AccessLevel;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import lombok.experimental.FieldDefaults;
 
-// @AllArgsConstructor // Lombok needs a default constructor in the base class
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class Administrator extends Member {
 
-    /*private final*/ String role;
-    /*private final*/ LocalDate allocatedAt;
+    private final String role;
+    private final LocalDate allocatedAt;
 
-    public Administrator(Integer id, String name, int age, String email, String role) {
-        super(id, name, age, email);
+    public Administrator(String name, String email, String role) {
+        this.name = name;
+        this.email = email;
         this.role = role;
         this.allocatedAt = LocalDate.now();
     }
 
-//    @Override // 생략 가능 // 재정의 안하면, 상위 클래스 버전 출력. Member(memberId=1, name=yohan)
-//    public String toString() {
-//        return String.format(
-//            "Administrator(id=%s, name=%s, age=%s, email=%s, role=%s, allocated=%s)",
-//            this.getId(), this.getName(), this.getAge(), this.getEmail(), this.role, this.allocatedAt
-//        );
-//    }
+    public String toString() {
+        return String.format(
+            "Member(id=%s, name=%s, age=%s, email=%s, role=%s, allocated=%s)",
+            this.id, this.name, this.age, this.email, this.role, this.allocatedAt
+        );
+    }
+
+    public String getRole() {
+        return role;
+    }
 }
