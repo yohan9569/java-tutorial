@@ -5,9 +5,8 @@ import com.example.demo.member.Member;
 public class DemoApplication {
 
     public static void main(String[] args) {
-        Member yohan = new Member();
+        Member yohan = new Member("yohan");
 
-        yohan.setName("yohan");
         yohan.setEmail("yohan@example.com");
 
         System.out.println("---");
