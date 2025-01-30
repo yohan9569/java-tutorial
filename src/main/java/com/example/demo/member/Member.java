@@ -17,6 +17,18 @@ public class Member {
     @Singular
     protected List<String> favorites; // 복수 명칭 사용해야 함.
 
+    public static class MemberBuilder {
+
+        private int age;
+
+        public MemberBuilder age(int age) {
+            if (age < 19) {
+                throw new RuntimeException("애들은 가라!");
+            }
+            this.age = age;
+            return this;
+        }
+    }
 
     public String toString() {
         return String.format("Member(id=%s, name=%s, age=%s, email=%s, favorites=%s)", id, name, age, email, favorites);
