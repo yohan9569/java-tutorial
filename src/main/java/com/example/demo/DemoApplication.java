@@ -12,7 +12,7 @@ public class DemoApplication {
             .build();
 
         System.out.println("---");
-        System.out.println(yohan);              // Member(id=1, name=yohan, age=0, email=null)
+        System.out.println(yohan);              // Member(id=1, name=yohan, age=10, email=default)
         System.out.println(yohan.getName());    // yohan
     }
 }

@@ -1,19 +1,18 @@
 package com.example.demo.member;
 
 import lombok.Builder;
+import lombok.Builder.Default;
 
+@Builder
 public class Member {
 
     protected Integer id;
     protected String name;
-    protected int age;
-    protected String email;
+    @Builder.Default
+    protected int age = 10;
+    @Default // 앞에 Builder. 안 붙여도 동작한다.
+    protected String email = "default";
 
-    @Builder
-    public Member(Integer id, String name, int age, String email) {
-        this.id = id;
-        this.name = name;
-    }
 
     public String toString() {
         return String.format("Member(id=%s, name=%s, age=%s, email=%s)", id, name, age, email);
