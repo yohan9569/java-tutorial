@@ -6,11 +6,12 @@ import com.example.demo.member.Member;
 public class DemoApplication {
 
     public static void main(String[] args) {
-        MemberCreateRequestDto requestDto = new MemberCreateRequestDto("yohan", "yohan@example.com");
-        Member yohan = Member.from(requestDto);
+        Member yohan = Member.getInstance();
+        Member zohan = Member.getInstance();
 
         System.out.println("---");
-        System.out.println(yohan);          // Member(id=null, name=yohan, age=0, email=yohan@example.com)
-        System.out.println(yohan.getName());// yohan
+        System.out.println(yohan);          // Member@3108bc
+        System.out.println(zohan);          // Member@3108bc
+        System.out.println(yohan == zohan); // true
     }
 }
