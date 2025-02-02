@@ -13,7 +13,7 @@ public class Member {
     protected int age;
     protected String email;
 
-    public static Member getInstance() {
+    public synchronized static Member getInstance() {
         if (Objects.isNull(instance)) {
             instance = new Member();
         }
