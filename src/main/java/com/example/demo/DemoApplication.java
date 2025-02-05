@@ -14,7 +14,10 @@ public class DemoApplication {
                 throw new SQLException("데이터베이스 접속 실패");
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());      //데이터베이스 접속 실패
+            System.out.println(e.getStackTrace());   //[Ljava.lang.StackTraceElement;@6b09bb57
+            System.out.println(e.getStackTrace()[0]);//com.example.demo.DemoApplication.connect(DemoApplication.java:14)
+            System.out.println(e.getStackTrace()[1]);//com.example.demo.DemoApplication.main(DemoApplication.java:26)
         }
     }
 
