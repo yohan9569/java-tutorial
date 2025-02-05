@@ -16,9 +16,9 @@ public class DemoApplication {
                 throw new SQLException("데이터베이스 접속 실패");
             }
         } catch (SQLException e) {
-            log.error(String.format("데이터베이스 계정 불일치 - username: %s, password: %s", id, password), e);
+            log.error(String.format("데이터베이스 계정 불일치 - username: %s, password: %s", id, password));
             // 15:07:59.115 [main] ERROR com.example.demo.DemoApplication -- 데이터베이스 계정 불일치 - username: edmin, password: 4321
-            // java.sql.SQLException: 데이터베이스 접속 실패 at ~ at ~
+            // Stacktrace 가 없어서 추적 불가
         }
     }
 
