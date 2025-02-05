@@ -1,8 +1,10 @@
 package com.example.demo;
 
 import java.sql.SQLException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@Slf4j
 @SpringBootApplication
 public class DemoApplication {
     static void connect(String id, String password) {
@@ -14,10 +16,9 @@ public class DemoApplication {
                 throw new SQLException("데이터베이스 접속 실패");
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());      //데이터베이스 접속 실패
-            System.out.println(e.getStackTrace());   //[Ljava.lang.StackTraceElement;@6b09bb57
-            System.out.println(e.getStackTrace()[0]);//com.example.demo.DemoApplication.connect(DemoApplication.java:14)
-            System.out.println(e.getStackTrace()[1]);//com.example.demo.DemoApplication.main(DemoApplication.java:26)
+            log.error(String.format("데이터베이스 계정 불일치 - username: %s, password: %s", id, password), e);
+            // 15:07:59.115 [main] ERROR com.example.demo.DemoApplication -- 데이터베이스 계정 불일치 - username: edmin, password: 4321
+            // java.sql.SQLException: 데이터베이스 접속 실패 at ~ at ~
         }
     }
 
